@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://dypjesr48v2fu"]
+
+[ext_resource type="Script" uid="uid://b0uu2rwvkb3uh" path="res://Script/嵌字主窗口.gd" id="1_ye8v6"]
+[ext_resource type="Texture2D" uid="uid://5bwrjr3adsgg" path="res://Cache_65ad58a2d0ba8227.png" id="2_lx16b"]
+[ext_resource type="Script" uid="uid://gra2vflnywo" path="res://Script/嵌字视图.gd" id="3_tapi7"]
+[ext_resource type="Material" uid="uid://wqpl5nafavjk" path="res://Shader/UI浮现.tres" id="4_hmpd5"]
+[ext_resource type="Script" uid="uid://epybcohcgx3r" path="res://Script/右键菜单.gd" id="4_hy64k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tapi7"]
+bg_color = Color(0.95, 0.95, 0.95, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy64k"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmpd5"]
+bg_color = Color(0.85, 0.85, 0.85, 1)
+
+[node name="嵌字主窗口" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ye8v6")
+
+[node name="image_display" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_lx16b")
+
+[node name="label_port" type="Control" parent="image_display"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="嵌字视图" type="Camera2D" parent="."]
+position = Vector2(575, 325)
+script = ExtResource("3_tapi7")
+
+[node name="outside_layer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="right_menu" type="VBoxContainer" parent="outside_layer"]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("4_hmpd5")
+offset_left = 296.0
+offset_top = 160.0
+offset_right = 446.0
+offset_bottom = 278.0
+script = ExtResource("4_hy64k")
+
+[node name="Add" type="Button" parent="outside_layer/right_menu"]
+material = ExtResource("4_hmpd5")
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_focus_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tapi7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hy64k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hmpd5")
+text = "➕创建新文本框"
+
+[node name="Delete" type="Button" parent="outside_layer/right_menu"]
+material = ExtResource("4_hmpd5")
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_focus_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tapi7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hy64k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hmpd5")
+text = "❌删除文本框"
+
+[node name="Copy" type="Button" parent="outside_layer/right_menu"]
+material = ExtResource("4_hmpd5")
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_focus_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tapi7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hy64k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hmpd5")
+disabled = true
+text = "📄复制"
+
+[node name="Paste" type="Button" parent="outside_layer/right_menu"]
+material = ExtResource("4_hmpd5")
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_focus_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tapi7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hy64k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hmpd5")
+disabled = true
+text = "📝粘贴"
+
+[connection signal="pressed" from="outside_layer/right_menu/Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="outside_layer/right_menu/Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="outside_layer/right_menu/Copy" to="." method="_on_copy_pressed"]
+[connection signal="pressed" from="outside_layer/right_menu/Paste" to="." method="_on_paste_pressed"]

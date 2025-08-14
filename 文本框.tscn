@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwgks2c7l5i4o"]
+
+[ext_resource type="Script" uid="uid://cwoaaandojmbo" path="res://Script/文本框.gd" id="1_iqkk6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkk6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.050000004, 0.050000004, 0.050000004, 0)
+draw_center = false
+border_color = Color(0.86, 0.14333333, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="字框" type="TextEdit"]
+anchors_preset = -1
+anchor_right = 0.40104166
+anchor_bottom = 0.33950618
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_iqkk6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iqkk6")
+backspace_deletes_composite_character_enabled = true
+script = ExtResource("1_iqkk6")
+metadata/_edit_use_anchors_ = true
+
+[node name="size_change" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

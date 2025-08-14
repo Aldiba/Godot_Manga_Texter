@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://wqpl5nafavjk"]
+
+[ext_resource type="Shader" uid="uid://c8vfdejxfnu4a" path="res://Shader/UI浮现.gdshader" id="1_pcv8j"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_pcv8j")
+shader_parameter/alpha = 1.0
+shader_parameter/fade_progress = 1.0
+shader_parameter/softness = 0.350000016625
