@@ -7,6 +7,13 @@ extends Control
 
 @export var copy_panel:Node
 
+func _ready() -> void:
+	#%Add.pressed.connect()
+	pass
+
+func connect_right_menu_button():
+	return [%Add.pressed,%Delete.pressed,%Copy.pressed,%Paste.pressed]
+
 # This function will be called when the scene is ready.
 func save():
 	# Wait one frame to ensure all nodes have been rendered.

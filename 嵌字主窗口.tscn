@@ -55,6 +55,7 @@ offset_bottom = 278.0
 script = ExtResource("4_hy64k")
 
 [node name="Add" type="Button" parent="outside_layer/right_menu"]
+unique_name_in_owner = true
 material = ExtResource("4_hmpd5")
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
@@ -67,6 +68,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hmpd5")
 text = "➕创建新文本框"
 
 [node name="Delete" type="Button" parent="outside_layer/right_menu"]
+unique_name_in_owner = true
 material = ExtResource("4_hmpd5")
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
@@ -79,6 +81,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hmpd5")
 text = "❌删除文本框"
 
 [node name="Copy" type="Button" parent="outside_layer/right_menu"]
+unique_name_in_owner = true
 material = ExtResource("4_hmpd5")
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
@@ -92,6 +95,7 @@ disabled = true
 text = "📄复制"
 
 [node name="Paste" type="Button" parent="outside_layer/right_menu"]
+unique_name_in_owner = true
 material = ExtResource("4_hmpd5")
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
