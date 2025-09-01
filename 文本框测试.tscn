@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drudgwg1ersxm"]
+
+[node name="Control" type="RichTextLabel"]
+anchors_preset = -1
+anchor_top = -0.003
+anchor_right = 0.171
+anchor_bottom = 0.07300001
+offset_left = 1.0
+offset_top = -0.055999994
+offset_right = 0.0079956055
+offset_bottom = -0.30400467
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+text = "sadadaa
+sdadadsada"
+context_menu_enabled = true
+selection_enabled = true
+metadata/_edit_use_anchors_ = true

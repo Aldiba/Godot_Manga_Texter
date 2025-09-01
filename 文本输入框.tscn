@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwkh7r58rl64j"]
+
+[ext_resource type="Script" uid="uid://wwp43cb21wlb" path="res://Script/文本输入框.gd" id="1_81iaf"]
+
+[node name="text_editor" type="TextEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_smooth = true
+script = ExtResource("1_81iaf")
+
+[connection signal="text_changed" from="." to="." method="_on_text_changed"]

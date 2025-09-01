@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwgks2c7l5i4o"]
+[gd_scene load_steps=6 format=3 uid="uid://cwgks2c7l5i4o"]
 
-[ext_resource type="Script" uid="uid://5gyeu7v6mu0k" path="res://Script/文本框Label.gd" id="1_80ndl"]
 [ext_resource type="Script" uid="uid://cwoaaandojmbo" path="res://Script/文本框.gd" id="1_iqkk6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkk6"]
@@ -61,21 +60,10 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(1, 0.08999997, 0.08999997, 1)
 
-[node name="Label" type="Label"]
+[node name="字框" type="Button"]
 anchors_preset = -1
-anchor_right = 0.14409722
-anchor_bottom = 0.09876543
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_80ndl")
-metadata/_edit_use_anchors_ = true
-
-[node name="字框按钮" type="Button" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.15190972
+anchor_bottom = 0.084876545
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_iqkk6")
@@ -86,4 +74,11 @@ toggle_mode = true
 script = ExtResource("1_iqkk6")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="focus_entered" from="字框按钮" to="字框按钮" method="_on_focus_entered"]
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

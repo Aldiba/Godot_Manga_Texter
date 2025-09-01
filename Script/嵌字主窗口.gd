@@ -7,6 +7,8 @@ extends Control
 
 @export var copy_panel:Node
 
+var right_position:Vector2
+
 func _ready() -> void:
 	#%Add.pressed.connect()
 	pass
@@ -60,13 +62,16 @@ func _input(event: InputEvent) -> void:
 		right_menu.position = get_global_mouse_position()
 		right_menu.visible = true
 		right_menu.right_menu_show()
+		right_position = get_global_mouse_position()
 		
 	if event.is_action_released("right_click"):
 		right_menu.follow = false
 		
+		
 	if event.is_action_pressed("left_click"):
 		right_menu.right_menu_hide()
 		right_menu.follow = false
+		right_position = get_global_mouse_position()
 		#await right_menu.visible = false
 
 func _on_add_pressed() -> void:
